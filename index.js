@@ -70,7 +70,7 @@ var images = ["img/section-two/aboutPot.png", "img/section-two/aboutPot2.png"]
 var index = 0;
 
 setInterval (function(){
-
+    console.log("test");
   document.getElementById("pot").src = images[index];
   index++;
 
