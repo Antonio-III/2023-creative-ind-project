@@ -67,7 +67,7 @@ chatbotButton.addEventListener("click", ()=>{
 })
 
 
-
+// A function to simulate a looping, moving image on one of the elements
 setInterval (function(){
   var images = ["img/section-two/aboutPot.png", "img/section-two/aboutPot2.png"]
   var index = 1; // It starts at 1 because the element is already set to 0
