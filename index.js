@@ -66,15 +66,16 @@ chatbotButton.addEventListener("click", ()=>{
     
 })
 
-var images = ["img/section-two/aboutPot.png", "img/section-two/aboutPot2.png"]
-var index = 0;
+
 
 setInterval (function(){
-    console.log("test");
+  var images = ["img/section-two/aboutPot.png", "img/section-two/aboutPot2.png"]
+  var index = 1; // It starts at 1 because the element is already set to 0
+    
   document.getElementById("pot").src = images[index];
   index++;
 
-  if (index == images.length) {
+  if (index === images.length) {
     index = 0;
   }
 }, 1000);
