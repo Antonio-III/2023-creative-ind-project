@@ -120,13 +120,13 @@ html > body {
     padding-inline-start: 0;
     list-style-type: none;
   }
-  .section-one > .nav > ul > * {
+  .section-one > .nav > ul > a {
     padding: 2rem;
     color: white;
     text-decoration: none;
     transition: background-color 0.2s ease-in;
   }
-  .section-one > .nav > ul > * > li {
+  .section-one > .nav > ul > a > li {
     font-size: 1.2rem;
   }
   .section-one > .nav > ul > a:hover {
@@ -135,9 +135,8 @@ html > body {
   .section-one > .nav > ul > #contact-us-link {
     margin-left: auto;
   }
-  .section-one > .nav > ul > .menu {
+  .section-one > .nav > .menu {
     display: none;
-    cursor: pointer;
   }
   .section-one > .nav > .logo {
     position: absolute;
@@ -287,7 +286,7 @@ html > body {
     padding: 0.3rem;
     border-radius: 3rem;
     position: relative;
-    margin: 25rem 0 5rem 0;
+    margin-top: 25rem;
   }
   .section-three > .oval-design {
     position: absolute;
@@ -484,10 +483,10 @@ html > body {
   .section-four > .socials {
     display: flex;
     justify-content: center;
-    margin: 5% 5%;
+    margin: 3rem;
   }
-  .section-four > .socials > img {
-    max-width: 10%;
+  .section-four > .socials > a > img {
+    max-width: 12rem;
   }
   .section-four > .socials > .socmed {
     transition: 0.5s;
@@ -520,40 +519,52 @@ html > body {
 }
 @media (min-width: 481px) and (max-width: 800px) {
   .section-one > .nav {
+    display: flex;
     position: relative;
     background-color: #662C00;
   }
   .section-one > .nav > ul {
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    z-index: 1;
+    min-width: 100%;
+    background-color: #662C00;
     padding-inline-start: 0;
+    overflow: hidden;
     list-style-type: none;
+    transition: 0.3s ease-in;
   }
-  .section-one > .nav > ul > * {
-    padding: 2rem;
+  .section-one > .nav > ul > a {
+    padding: 1.5rem;
     color: white;
     text-decoration: none;
     transition: background-color 0.2s ease-in;
   }
-  .section-one > .nav > ul > * > li {
+  .section-one > .nav > ul > a > li {
     font-size: 1.2rem;
   }
   .section-one > .nav > ul > a:hover {
     background-color: #754119;
   }
   .section-one > .nav > ul > #contact-us-link {
-    margin-left: auto;
+    margin-left: unset;
   }
-  .section-one > .nav > ul > a {
-    display: none;
-  }
-  .section-one > .nav > ul > .menu {
+  .section-one > .nav > .menu {
+    padding: 1.5rem;
     display: block;
     cursor: pointer;
+  }
+  .section-one > .nav > .menu:hover {
+    background-color: #754119;
   }
   .section-one > .nav > .logo {
     position: absolute;
     top: 0;
     left: 50%;
+    z-index: 1;
   }
   .section-one > .nav > .logo > img {
     position: absolute;
@@ -713,7 +724,7 @@ html > body {
     padding: 0.3rem;
     border-radius: 4rem;
     position: relative;
-    margin: 15rem 0 5rem 0;
+    margin-top: 15rem;
   }
   .section-three > .oval-design {
     position: absolute;
@@ -907,17 +918,19 @@ html > body {
   .section-four {
     align-self: center;
   }
-  .section-four .section-four > .socials {
+  .section-four > .socials {
     display: flex;
     justify-content: center;
-    margin: 5% 5%;
+    margin: 2rem;
   }
-  .section-four .section-four > .socials > img {
-    max-width: 10%;
+  .section-four > .socials > a {
+    margin: 0 1rem;
   }
-  .section-four .section-four > .socials > .socmed-middle {
-    margin-left: 4em;
-    margin-right: 4em;
+  .section-four > .socials > a > img {
+    max-width: 10rem;
+  }
+  .section-four > .socials > .socmed {
+    transition: 0.5s;
   }
   .chatbot-container {
     position: fixed;
@@ -944,39 +957,51 @@ html > body {
 @media (max-width: 480px) {
   .section-one > .nav {
     position: relative;
+    display: flex;
     background-color: #662C00;
   }
   .section-one > .nav > ul {
     display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    z-index: 1;
+    min-width: 100%;
+    background-color: #662C00;
     padding-inline-start: 0;
+    overflow: hidden;
     list-style-type: none;
+    transition: 0.3s ease-in;
   }
-  .section-one > .nav > ul > * {
-    padding: 2rem;
+  .section-one > .nav > ul > a {
+    padding: 1rem;
     color: white;
     text-decoration: none;
     transition: background-color 0.2s ease-in;
   }
-  .section-one > .nav > ul > * > li {
+  .section-one > .nav > ul > a > li {
     font-size: 1.2rem;
   }
   .section-one > .nav > ul > a:hover {
     background-color: #754119;
   }
   .section-one > .nav > ul > #contact-us-link {
-    margin-left: auto;
+    margin-left: unset;
   }
-  .section-one > .nav > ul > a {
-    display: none;
-  }
-  .section-one > .nav > ul > .menu {
+  .section-one > .nav > .menu {
+    padding: 1rem;
     display: block;
     cursor: pointer;
+  }
+  .section-one > .nav > .menu:hover {
+    background-color: #754119;
   }
   .section-one > .nav > .logo {
     position: absolute;
     top: 0;
     left: 50%;
+    z-index: 1;
   }
   .section-one > .nav > .logo > img {
     position: absolute;
@@ -1141,7 +1166,7 @@ html > body {
     padding: 0.3rem;
     border-radius: 4rem;
     position: relative;
-    margin: 12rem 0 3rem 0;
+    margin-top: 12rem;
   }
   .section-three > .oval-design {
     position: absolute;
@@ -1313,17 +1338,20 @@ html > body {
   .section-four {
     align-self: center;
   }
-  .section-four .section-four > .socials {
+  .section-four > .socials {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 5% 5%;
+    margin: 1rem;
   }
-  .section-four .section-four > .socials > img {
-    max-width: 10%;
+  .section-four > .socials > a {
+    margin: 0.5rem 0;
   }
-  .section-four .section-four > .socials > .socmed-middle {
-    margin-left: 4em;
-    margin-right: 4em;
+  .section-four > .socials > a > img {
+    max-width: 9rem;
+  }
+  .section-four > .socials > .socmed {
+    transition: 0.5s;
   }
   .chatbot-container {
     position: fixed;

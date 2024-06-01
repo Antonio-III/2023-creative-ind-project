@@ -3,6 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lemon&display=swap');
 
 
+@mixin navPadding($size){
+    @if $size == "large"{
+    padding: 2rem;
+    }
+
+    @else if $size == "medium"{
+        padding: 1.5rem;
+    }
+
+    @else if $size == "small"{
+        padding: 1rem;  
+    }
+}
+
 // The reason I used `padding` instead of `border` is because `absolute`-positioned elements, when set to 100% top/bottom, are placed above/below the `relative`-positioned ancestor's CONTENT-BOX instead of BORDER-BOX.
 // So the added size of the `border` property will not affect the positioning of the `absolute` element whereas, per the site's design, we want it to be affected.
 // Now, these can have its drawbacks in other designs but as far as THIS DOCUMENT specifically, there isn't, so I chose to keep the `bg-color, padding` rules for inner borders for consistency as this problem is only for the outer border specifically.
@@ -219,9 +233,9 @@ html{
 
                 list-style-type: none;
 
-                >*{
-                    padding: 2rem;
-
+                >a{
+                    @include navPadding("large");
+                  
                     color: white;
 
                     text-decoration: none;
@@ -241,12 +255,11 @@ html{
                     margin-left: auto;
                 }
 
-                >.menu{
-                    display: none;
-                    
-                    cursor: pointer;
-                }
+            }
 
+            >.menu{
+                display: none;
+            
             }
 
             >.logo{
@@ -447,7 +460,7 @@ html{
 
         position: relative;
         
-        margin: 25rem 0 5rem 0;
+        margin-top: 25rem;
         
         >.oval-design{
             position:absolute;
@@ -719,10 +732,12 @@ html{
 
             display:flex;
             justify-content: center;
-            margin: 5% 5%;
+            margin: 3rem;
 
-            >img{
-                max-width: 10%;
+            >a{
+                >img{
+                    max-width: 12rem;
+                }
             }
 
             >.socmed{
@@ -767,18 +782,36 @@ html{
     .section-one{
            
         >.nav{
+            display: flex;
+
             position: relative;
+
             background-color: #662C00;
 
             >ul{
-                display: flex;
+                display: flex; 
+                flex-direction: column;
+                
+                position: absolute;
+                top: 100%;
+                right:100%;
+
+                z-index: 1;
+                
+                
+                min-width: 100%;
+
+                background-color: #662C00;
 
                 padding-inline-start: 0;
 
+                overflow: hidden;
+
                 list-style-type: none;
 
-                >*{
-                    padding: 2rem;
+                transition: 0.3s ease-in;
+                >a{
+                    @include navPadding("medium");
 
                     color: white;
 
@@ -796,25 +829,28 @@ html{
                 }
 
                 >#contact-us-link{
-                    margin-left: auto;
+                    margin-left: unset;
                 }
+            }
 
-                >a{
-                    display: none;
-                }
-                >.menu{
-                    display: block;
-                    
-                    cursor: pointer;
-                }
+            >.menu{
+                @include navPadding("medium");
 
+                display: block;
+
+                cursor: pointer;
+            }
+
+            >.menu:hover{
+                background-color: #754119;
             }
 
             >.logo{
                 position: absolute;
                 top: 0;
                 left: 50%;
-             
+                
+                z-index: 1;
                 >img{
                     position: absolute;
                     
@@ -1024,7 +1060,7 @@ html{
 
         position: relative;
         
-        margin: 15rem 0 5rem 0;
+        margin-top: 15rem;
         
         >.oval-design{
             position:absolute;
@@ -1294,23 +1330,24 @@ html{
     .section-four{
         align-self: center;
         
-        .section-four{
-            >.socials{
-    
-                display:flex;
-                justify-content: center;
-                margin: 5% 5%;
-    
+        >.socials{
+
+            display:flex;
+            justify-content: center;
+            margin: 2rem;
+
+            >a{
+                margin: 0 1rem;
                 >img{
-                    max-width: 10%;
+                    max-width: 10rem;
                 }
-                
-                >.socmed-middle{
-                    margin-left: 4em;
-                    margin-right: 4em;
-                }
-            }     
-        }     
+            }
+
+            >.socmed{
+                transition: 0.5s;
+            }
+            
+        }       
     }
     
     .chatbot-container{
@@ -1342,26 +1379,38 @@ html{
 
 
 @media (max-width:480px) {
-    // html{
-    //     >body{
-    //         background-size: unset;
-    //     }
-    // }
     .section-one{
            
         >.nav{
             position: relative;
+            
+            display:flex;
+
             background-color: #662C00;
 
             >ul{
-                display: flex;
+                display: flex; 
+                flex-direction: column;
+                
+                position: absolute;
+                top: 100%;
+                right:100%;
+                
+                z-index: 1;
+                
+                min-width: 100%;
+
+                background-color: #662C00;
 
                 padding-inline-start: 0;
 
+                overflow: hidden;
+
                 list-style-type: none;
 
-                >*{
-                    padding: 2rem;
+                transition: 0.3s ease-in;
+                >a{
+                    @include navPadding("small");
 
                     color: white;
 
@@ -1379,25 +1428,28 @@ html{
                 }
 
                 >#contact-us-link{
-                    margin-left: auto;
+                    margin-left: unset;
                 }
-
-                >a{
-                    display: none;
-                }
-                >.menu{
-                    display: block;
-                    
-                    cursor: pointer;
-                }
-
             }
 
+            >.menu{
+                @include navPadding("small");
+
+                display: block;
+
+                cursor: pointer;
+            }
+
+            >.menu:hover{
+                background-color: #754119;
+            }
+            
             >.logo{
                 position: absolute;
                 top: 0;
                 left: 50%;
-             
+                
+                z-index: 1;
                 >img{
                     position: absolute;
                     
@@ -1405,8 +1457,6 @@ html{
                     
                     max-width: 17rem;
                 }
-                
-
             }         
         }
 
@@ -1616,7 +1666,7 @@ html{
 
         position: relative;
         
-        margin: 12rem 0 3rem 0;
+        margin-top: 12rem;
         
         >.oval-design{
             position:absolute;
@@ -1853,23 +1903,25 @@ html{
     .section-four{
         align-self: center;
 
-        .section-four{
-            >.socials{
-    
-                display:flex;
-                justify-content: center;
-                margin: 5% 5%;
-    
+        >.socials{
+
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 1rem;
+
+            >a{
+                margin: .5rem 0;
                 >img{
-                    max-width: 10%;
+                    max-width: 9rem;
                 }
-                
-                >.socmed-middle{
-                    margin-left: 4em;
-                    margin-right: 4em;
-                }
-            }     
-        } 
+            }
+
+            >.socmed{
+                transition: 0.5s;
+            }
+            
+        }  
     }
     
     .chatbot-container{

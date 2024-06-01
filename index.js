@@ -46,8 +46,6 @@ function revealvert(){
 
 // This is for the chatbot's minimize/maximise feature
 const chatbotButton = document.getElementById("chatbot-button");
-
-
 chatbotButton.addEventListener("click", ()=>{
     const chatbotItself = document.querySelector(".chatbot-itself");
    
@@ -79,3 +77,21 @@ setInterval (function(){
     index = 0;
   }
 }, 1000);
+
+// Minimize/Maximize nav buttons
+const menuButtton = document.querySelector(".menu");
+let isNavButtonsOpened = false;
+menuButtton.addEventListener("click", ()=>{
+    const navButtons = document.querySelector(".nav-buttons");
+    
+    if (isNavButtonsOpened){
+        navButtons.style.right = "100%";
+    
+    }
+
+    else{
+        navButtons.style.right ="0";
+    }
+
+    isNavButtonsOpened = !isNavButtonsOpened;
+})
